@@ -65,7 +65,7 @@ android {
 
     // Safe fallback if .env is missing or GEMINI_API_KEY is not set
     defaultConfig {
-        buildConfigField("String", "GEMINI_API_KEY", ""OFFLINE_MODE"")
+        buildConfigField("String", "GEMINI_API_KEY", "\"OFFLINE_MODE\"")
     }
 
     packaging {
