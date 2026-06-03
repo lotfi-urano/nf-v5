@@ -30,9 +30,16 @@ jobs:
 
       - run: echo "GEMINI_API_KEY=OFFLINE_MODE" > app/.env
 
-      - run: chmod +x gradlew && ./gradlew :app:assembleDebug --no-daemon
+      - name: Build Debug APK
+        run: |
+          export JAVA_HOME=$(echo $JAVA_HOME_17_X64)
+          export PATH=$JAVA_HOME/bin:$PATH
+          java -jar gradle/wrapper/gradle-wrapper.jar :app:assembleDebug --no-daemon
+        env:
+          ANDROID_SDK_ROOT: /home/runner/android-sdk
 
       - uses: actions/upload-artifact@v4
         with:
           name: nasheet-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+
