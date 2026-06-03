@@ -39,13 +39,20 @@ class NasheetApplication : Application() {
     }
 
     private fun initApiClient() {
-        try {
-            val savedUrl = com.aistudio.nasheet.app.data.api.NasheetPreferenceHelper.getBaseUrl(this)
-            com.aistudio.nasheet.app.data.api.NasheetApiClient.updateBaseUrl(savedUrl)
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to load saved API URL, using default.", e)
-        }
+    try {
+        val ctx = applicationContext
+        Thread {
+            try {
+                val savedUrl = com.aistudio.nasheet.app.data.api.NasheetPreferenceHelper.getBaseUrl(ctx)
+                com.aistudio.nasheet.app.data.api.NasheetApiClient.updateBaseUrl(savedUrl)
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to load saved API URL, using default.", e)
+            }
+        }.start()
+    } catch (e: Exception) {
+        Log.e(TAG, "Failed to start API client init thread.", e)
     }
+}
 
     companion object {
         private const val TAG = "NasheetApplication"
