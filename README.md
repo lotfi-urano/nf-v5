@@ -8,6 +8,23 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/dacd2554-eb8f-4627-9929-c07ab6dc169e
 
+## كيفية التحميل (How to Download)
+
+يمكنك تحميل الملفات بعدة طرق:
+
+1. **تحميل الملف المضغوط (الأسهل):**
+   - اذهب إلى قسم [Releases](https://github.com/lotfi-urano/nf-v5/releases).
+   - قم بتحميل ملف `nasheet_fixed-2.zip`.
+
+2. **تحميل الكود المصدري:**
+   - اضغط على زر **Code** الأخضر في أعلى الصفحة.
+   - اختر **Download ZIP**.
+
+3. **استخدام Git:**
+   ```bash
+   git clone https://github.com/lotfi-urano/nf-v5.git
+   ```
+
 ## Run Locally
 
 **Prerequisites:**  [Android Studio](https://developer.android.com/studio)
