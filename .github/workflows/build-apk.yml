@@ -27,19 +27,22 @@ jobs:
           $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
           echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
 
-      - name: Fix gradle-wrapper.jar
+      - name: Fix gradle-wrapper.jar and gradlew
         run: |
           wget -q -O gradle/wrapper/gradle-wrapper.jar \
             "https://github.com/gradle/gradle/raw/v8.10.2/gradle/wrapper/gradle-wrapper.jar"
-          ls -lh gradle/wrapper/gradle-wrapper.jar
+          curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.10.2/gradlew -o gradlew
+          chmod +x gradlew
 
       - run: echo "sdk.dir=$HOME/android-sdk" > local.properties
       - run: echo "GEMINI_API_KEY=OFFLINE_MODE" > app/.env
 
       - name: Build Debug APK
-        run: bash gradlew :app:assembleDebug --no-daemon
+        run: ./gradlew :app:assembleDebug --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
           name: nasheet-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+
+        
