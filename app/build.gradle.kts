@@ -55,8 +55,8 @@ android {
     }
 
     kotlin {
-        jvmToolchain(17)
-    }
+    jvmToolchain(17)
+}
 
     buildFeatures {
         compose = true
