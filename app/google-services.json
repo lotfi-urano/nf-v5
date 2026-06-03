@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100044476112",
+    "project_id": "nasheet-app",
+    "storage_bucket": "nasheet-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100044476112:android:e54a8819750e0fbcab18d5",
+        "android_client_info": {
+          "package_name": "com.aistudio.nasheet.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA4N6ZmkD6MSDsTWrYsM6fwBOa9JXSUdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

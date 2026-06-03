@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 
+       تهيئة الحماية لنطاق api.nasheet.app
+       Certificate Pinning قوي جداً ولكن قد يؤدي لتعطيل التطبيق إذا تم تجديد شهادة السيرفر بدون تحديث التطبيق.
+       
+       لتفعيل تثبيت الشهادة (Pinning) على نطاق النظام البسيط، قم بإلغاء التعليق عن وسم <pin-set> أدناه 
+       واستبدل قيم الـ pins بالقيم الحقيقية المستخرجة عبر openssl.
+    -->
+    <domain-config>
+        <domain includeSubdomains="true">api.nasheet.app</domain>
+        <!--
+        <pin-set>
+            <pin digest="SHA-256">47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</pin>
+            <pin digest="SHA-256">47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</pin>
+        </pin-set>
+        -->
+    </domain-config>
+</network-security-config>

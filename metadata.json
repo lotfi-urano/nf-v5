@@ -1,0 +1,8 @@
+{
+  "name": "نشيط (Nasheet)",
+  "description": "تطبيق تعليمي تفاعلي للأطفال ومتابعة دقيقة لصعوبات التعلم للأولياء والأساتذة",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
